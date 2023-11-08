@@ -74,6 +74,10 @@ function blob_fixup() {
             ${PATCHELF}  --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
             ;;
 
+        vendor/lib/egl/eglSubDriverAndroid.so | vendor/lib/libCB.so | vendor/lib/hw/vulkan.adreno.so | vendor/lib64/egl/eglSubDriverAndroid.so | vendor/lib64/libCB.so | vendor/lib64/hw/vulkan.adreno.so)
+            ${PATCHELF}  --replace-needed "vendor.qti.hardware.display.mapper@3.0.so" "vendor.qti.hardware.display.mappershim.so" "${2}" && ${PATCHELF}  --replace-needed "vendor.qti.hardware.display.mapper@4.0.so" "vendor.qti.hardware.display.mappershim.so" "${2}" && ${PATCHELF}  --replace-needed "android.hardware.graphics.mapper@3.0.so" "android.hardware.graphics.mappershim.so" "${2}" && ${PATCHELF}  --replace-needed "android.hardware.graphics.mapper@4.0.so" "android.hardware.graphics.mappershim.so" "${2}"
+            ;;
+
     esac
 }
 
