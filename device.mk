@@ -446,3 +446,6 @@ PRODUCT_BOOT_JARS += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/beryllium/beryllium-vendor.mk)
+
+# Call MiCam setup
+$(call inherit-product, vendor/miuicamera/config.mk)
