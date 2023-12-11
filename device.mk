@@ -113,6 +113,10 @@ PRODUCT_PACKAGES += \
     liblhdcdec \
     liblhdcBT_dec
 
+PRODUCT_PACKAGES += \
+    libldacBT_enc \
+    libldacBT_abr
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2246
 TARGET_SCREEN_WIDTH := 1080
